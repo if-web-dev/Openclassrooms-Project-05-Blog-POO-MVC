@@ -1,5 +1,14 @@
 <div class="container main-content">
+    <!-- Alert Message -->
     <?php
+    $session = new App\Core\Session();
+    if ($session->existsAttribute("alert")) : ?>
+        <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
+            <?= $session->getAttribute("alert")["message"]; ?>
+        </div>
+    <?php
+    $session->unset("alert");
+    endif;
     ?>
     <!-- Heading Row-->
     <div class="row gx-4 gx-lg-5 align-items-center my-5">

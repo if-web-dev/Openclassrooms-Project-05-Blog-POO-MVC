@@ -96,6 +96,17 @@
                     <button href="#contactForm" class="btn btn-outline-dark px-5 py-3" id="submitButton" name="submit" type="submit" value="submit">Send</button>
                 </div>
             </form>
+            <!-- Alert Message -->
+            <?php
+            $session = new App\Core\Session();
+            if ($session->existsAttribute("alert")) : ?>
+                <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
+                    <?= $session->getAttribute("alert")["message"]; ?>
+                </div>
+            <?php
+            $session->unset("alert");
+            endif;
+            ?>
         </div>
     </div>
 </div>
