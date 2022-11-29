@@ -1,4 +1,15 @@
 <div class="container">
+    <!-- Alert Message -->
+    <?php
+    $session = new App\Core\Session();
+    if ($session->existsAttribute("alert")) : ?>
+        <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
+            <?= $session->getAttribute("alert")["message"]; ?>
+        </div>
+    <?php
+    $session->unset("alert");
+    endif;
+    ?>
     <h1 class="my-5 text-center">Add a post</h1>
     <!-- Create an Article -->
     <div class="card shadow my-5">

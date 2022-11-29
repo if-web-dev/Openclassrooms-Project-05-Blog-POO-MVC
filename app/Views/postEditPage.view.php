@@ -1,5 +1,15 @@
 <div class="container">
-    
+    <!-- Alert Message -->
+    <?php
+    $session = new App\Core\Session();
+    if ($session->existsAttribute("alert")) : ?>
+        <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
+            <?= $session->getAttribute("alert")["message"]; ?>
+        </div>
+    <?php
+    $session->unset("alert");
+    endif;
+    ?>
     <h1 class="my-5 text-center">Update a post</h1>
     <!-- Create an Article -->
     <div class="card shadow my-5">
@@ -10,20 +20,20 @@
             <div class="row justify-content-center mb-5">
                 <div>
                     <form method="post" action="postProcessing?id=">
-                         <!-- Category input-->
-                         <div class="my-4">
+                        <!-- Category input-->
+                        <div class="my-4">
                             <select class="form-control form-control-lg" name="category" id="category">
-                               
-                                    <option value="">
-                                        
-                                    </option>
-                                
+
+                                <option value="">
+
+                                </option>
+
                             </select>
                             <div class="invalid-feedback">A category is required.</div>
                         </div>
                         <!-- title input-->
                         <div class="my-4">
-                            <input class="form-control form-control-lg" id="title" name="title" type="text" value=""/>
+                            <input class="form-control form-control-lg" id="title" name="title" type="text" value="" />
                             <div class="invalid-feedback">A title is required.</div>
                         </div>
                         <!-- Chapo input-->

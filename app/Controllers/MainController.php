@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 /**
- * Encapsulates the main controller in order to generata pages
+ * Encapsulates the main controller in order to generate pages
  * from page data
  */
 abstract class MainController

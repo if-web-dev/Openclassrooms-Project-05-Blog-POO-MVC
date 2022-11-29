@@ -1,5 +1,16 @@
 <div class="container main-content d-flex flex-column">
-
+    <!-- Alert Message -->
+    <?php
+    $session = new App\Core\Session();
+    if ($session->existsAttribute("alert")) : ?>
+        <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
+            <?= $session->getAttribute("alert")["message"]; ?>
+        </div>
+    <?php
+    $session->unset("alert");
+    endif;
+    ?>
+    <!-- Post -->
     <div class="card m-3 my-5 shadow">
         <div class="card-body">
             <h2>
@@ -22,10 +33,10 @@
 
                 <div class="media-body mx-3">
                     <h5 class="mt-0 font400 clearfix">
-                       
+
                     </h5>
                     <p>
-                       
+
                     </p>
                 </div>
 

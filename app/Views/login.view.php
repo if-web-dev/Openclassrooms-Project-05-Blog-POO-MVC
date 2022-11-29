@@ -1,6 +1,17 @@
 <!-- Page Content -->
 <div class="container main-content">
     <div class="d-flex flex-column justify-content-center align-items-center h-100">
+        <!-- Alert Message -->
+        <?php
+        $session = new App\Core\Session();
+        if ($session->existsAttribute("alert")) : ?>
+            <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
+                <?= $session->getAttribute("alert")["message"]; ?>
+            </div>
+        <?php
+        $session->unset("alert");
+        endif;
+        ?>
         <!-- Login Section Form-->
         <div class="col-md-6 col-lg-4">
             <div id="login" class="bg-secondary p-3 shadow d-block rounded">
