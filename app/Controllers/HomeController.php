@@ -1,9 +1,14 @@
 <?php
 
 namespace App\Controllers;
-
+/**
+ * Encapsulates the data home page et generate his page
+ */
 class HomeController extends MainController
 {
+    /**
+     * Return home page
+     */
     public function home()
     {
         $data_page = [
