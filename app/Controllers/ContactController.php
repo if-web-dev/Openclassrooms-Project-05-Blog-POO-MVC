@@ -6,9 +6,14 @@ use App\Core\POST;
 use App\Core\Securite;
 use App\Core\Toolbox;
 use App\Services\Mail;
-
+/**
+ * Encapsulates the data contact page et generate his page
+ */
 class ContactController extends MainController
 {
+    /**
+    * Returns contact page
+    */
     public function contacts()
     {
 
