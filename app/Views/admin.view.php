@@ -7,7 +7,7 @@
             <?= $session->getAttribute("alert")["message"]; ?>
         </div>
     <?php
-    $session->unset("alert");
+        $session->unset("alert");
     endif;
     ?>
     <!-- Heading Row-->
@@ -45,20 +45,22 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        <tr>
-                            <td class="align-middle"></td>
-                            <td class="align-middle">
-                                <a href="mailto: ">
-
-                                </a>
-                            </td>
-                            <td class="align-middle"></td>
-                            <td class="align-middle text-center">
-                                <a href="deleteUser?id=" class="btn btn-outline-danger">
-                                    Delete Account
-                                </a>
-                            </td>
-                        </tr>
+                        <?php foreach ($users_list as $user) : ?>
+                            <tr>
+                                <td class="align-middle"><?= $user["name"] . " " . $user["firstname"] ?></td>
+                                <td class="align-middle">
+                                    <a href="mailto: <?= $user["email"] ?>">
+                                        <?= $user["email"] ?>
+                                    </a>
+                                </td>
+                                <td class="align-middle"><?= $user["created_at"] ?></td>
+                                <td class="align-middle text-center">
+                                    <a href="deleteUser?id=<?= $user["id"] ?>" class="btn btn-outline-danger">
+                                        Delete Account
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

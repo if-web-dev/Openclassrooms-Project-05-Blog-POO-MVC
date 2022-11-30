@@ -127,7 +127,7 @@ class UsersManager extends Model
         return ((int)$datas["is_actived"] === 1);
     }
     /**
-     * checks if the ueser has an actived account
+     * checks if the user has an admin account
      * @param string $email user email
      */
     public function isAnAdminAccount(string $email): bool
