@@ -4,6 +4,7 @@ namespace App\Controllers\Admin;
 
 use App\Controllers\MainController;
 use App\Models\UsersManager;
+use App\Models\PostsManager;
 use App\Core\Securite;
 use App\Core\Toolbox;
 /**
@@ -19,12 +20,15 @@ class AdminController extends MainController
     public function admin()
     {
         $Users = new UsersManager(DBNAME, HOST, USERNAME, PASSWORD);
+        $Posts = new PostsManager(DBNAME, HOST, USERNAME, PASSWORD);
+
 
         $data_page = [
             "page_description" => "A page where the admin manage users, posts and comments",
             "page_title" => "Admin page",
             "view" => "../Views/admin.view.php",
             "users_list" => $Users->getUsersList(),
+            "posts_list" => $Posts->getPostsList(),
             "page_css" => "admin.css",
             "page_js" => ["admin.js"],
             "template" => "../Views/Common/template.view.php",
