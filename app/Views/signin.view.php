@@ -22,22 +22,22 @@
                 <form method="POST" action="validationLogin">
                     <!-- Name input-->
                     <div class="form-group mb-3">
-                        <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
+                        <div class="icon d-flex align-items-center justify-content-center"></div>
                         <input type="text" name="name" id="signin-name" class="form-control" placeholder="Name">
                     </div>
                     <!-- Firstname input-->
                     <div class="form-group mb-3">
-                        <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
+                        <div class="icon d-flex align-items-center justify-content-center"></div>
                         <input type="text" name="firstname" id="signin-firstname" class="form-control" placeholder="Firstname">
                     </div>
                     <!-- Email input-->
                     <div class="form-group mb-3">
-                        <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-envelope"></span></div>
+                        <div class="icon d-flex align-items-center justify-content-center"></div>
                         <input type="email" name="email" id="signin-email" class="form-control" placeholder="Email">
                     </div>
                     <!-- Password input-->
                     <div class="form-group mb-3">
-                        <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
+                        <div class="icon d-flex align-items-center justify-content-center"></div>
                         <input type="password" name="password" id="signin-password" class="form-control" placeholder="Password">
                     </div>
                     <div class="form-group">
