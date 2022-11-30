@@ -6,12 +6,20 @@
          <div class="collapse navbar-collapse" id="navbarSupportedContent">
              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                  <li class="nav-item"><a class="nav-link active" aria-current="page" href="home">Home</a></li>
-                 <li class="nav-item"><a class="nav-link" href="admin">Admin</a></li>
+                <?php 
+                 $session = new App\Core\Session();
+                 if ($session->getAttribute("profile") ? $session->getAttribute("profile")["is_admin"] : false) : ?>
+                    <li class="nav-item"><a class="nav-link" href="admin">Admin</a></li>
+                <?php endif ; ?>
                  <li class="nav-item"><a class="nav-link" href="postslist">Postslist</a></li>
                  <li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
-                 <li class="nav-item"><a class="nav-link" href="cv">Cv Page</a></li>
-                 <li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
-                 <li class="nav-item"><a class="nav-link" href="login">Login</a></li>
+                <?php 
+                 $session = new App\Core\Session();
+                 if ($session->existsAttribute("profile")) : ?>
+                    <li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
+                <?php else : ?>
+                    <li class="nav-item"><a class="nav-link" href="login">Login</a></li>
+                <?php endif; ?>
              </ul>
          </div>
      </div>

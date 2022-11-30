@@ -7,7 +7,7 @@ namespace App\Controllers;
 class HomeController extends MainController
 {
     /**
-     * Return home page
+     * Returns home page
      */
     public function home()
     {

@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 use App\Exceptions\RouteNotFoundException;
 use App\Router\Router;
 
