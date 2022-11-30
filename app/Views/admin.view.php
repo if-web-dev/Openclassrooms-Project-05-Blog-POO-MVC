@@ -94,31 +94,31 @@
                         </tr>
                     </tfoot>
                     <tbody>
+                        <?php foreach($posts_list as $post) :?>
+                            <tr>
+                                <td class="align-middle">
+                                    <a href="post?id=<?= $post["id"] ?>">
+                                        <?= $post["title"] ?>
+                                    </a>
+                                </td>
+                                <td class="align-middle">
+                                    <?= $post["created_at"] ?>
+                                </td>
+                                <td class="align-middle">
+                                    <?= $post["update_at"] ?>
+                                </td>
+                                <td class="align-middle">
+                                    <?= $post["name"] ?>
+                                </td>
 
-                        <tr>
-                            <td class="align-middle">
-                                <a href="post?id=">
-
-                                </a>
-                            </td>
-                            <td class="align-middle">
-
-                            </td>
-                            <td class="align-middle">
-
-                            </td>
-                            <td class="align-middle">
-
-                            </td>
-
-                            <td class="align-middle text-center">
-                                <div class="d-flex justify-content-center">
-                                    <a href="updatePost?id=" class="btn btn-outline-warning m-1">Edit Post</a>
-                                    <a href="deletePost?id=" class="btn btn-outline-danger m-1">Delete Post</a>
-                                </div>
-                            </td>
-                        </tr>
-
+                                <td class="align-middle text-center">
+                                    <div class="d-flex justify-content-center">
+                                    <a href="updatePost?id=<?= $post["id"] ?>" class="btn btn-outline-warning m-1">Edit Post</a>
+                                    <a href="deletePost?id=<?= $post["id"] ?>" class="btn btn-outline-danger m-1">Delete Post</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php endforeach ;?>
                     </tbody>
                 </table>
             </div>

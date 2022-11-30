@@ -3,8 +3,8 @@
 namespace App\Controllers;
 
 use App\Core\Get;
+use App\Core\POST;
 use App\Models\UsersManager;
-use App\Models\CategoriesManager;
 use App\Core\Session;
 use App\Core\Toolbox;
 /**
@@ -12,14 +12,22 @@ use App\Core\Toolbox;
  */
 class HomeController extends MainController
 {
+    private $superglobalPost;
+    private $superglobalGetValidationKey;
+    private $superglobalGetEmail;
+
+    public function __construct()
+    {
+        $this->superglobalPost = POST::all();
+        $this->superglobalGetValidationKey = Get::key("validation_key");
+        $this->superglobalGetEmail = Get::key("email");
+    }
     /**
      * Returns home page
      */
     public function home()
     {
         $user = new UsersManager(DBNAME, HOST, USERNAME, PASSWORD);
-        $getEmail = Get::key('email');
-        $getValidationKey = Get::key('validation_key');
 
         $data_page = [
             "page_description" => "Description de la page d'accueil",
@@ -28,13 +36,13 @@ class HomeController extends MainController
             "template" => "../Views/common/template.view.php"
         ];
 
-        if(isset($getEmail) and isset($getValidationKey)){
+        if(isset($this->superglobalGetEmail) and isset($this->superglobalGetValidationKey)){
 
-            $dataDB = $user->getUserInformation(Get::key('email'));
+            $dataDB = $user->getUserInformation($this->superglobalGetEmail);
 
-            if($dataDB["validation_key"]==Get::key('validation_key')){
+            if($dataDB["validation_key"]==$this->superglobalGetValidationKey){
                 
-                $user->activateUserAccount($getEmail);
+                $user->activateUserAccount($this->superglobalGetEmail);
                 new Session();
                 Session::setAttribute("profile", ["email" => $dataDB["email"]]);
                 Session::setAttribute("profile", ["is_admin" => $dataDB["is_admin"]]);

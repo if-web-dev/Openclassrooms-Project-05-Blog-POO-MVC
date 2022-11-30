@@ -1,14 +1,13 @@
 <div class="container">
-    <!-- Alert Message -->
     <?php
-    $session = new App\Core\Session();
-    if ($session->existsAttribute("alert")) : ?>
-        <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
-            <?= $session->getAttribute("alert")["message"]; ?>
-        </div>
-    <?php
-    $session->unset("alert");
-    endif;
+        $session = new App\Core\Session();
+        if ($session->existsAttribute("alert")) : ?>
+                <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
+                    <?= $session->getAttribute("alert")["message"]; ?>
+                </div>
+        <?php
+        $session->unset("alert");
+        endif;
     ?>
     <h1 class="my-5 text-center">Add a post</h1>
     <!-- Create an Article -->
@@ -20,8 +19,8 @@
             <div class="row justify-content-center mb-5">
                 <div>
                     <form method="post" action="postProcessing">
-                        <!-- Category input-->
-                        <div class="my-4">
+                         <!-- Category input-->
+                         <div class="my-4">
                             <select class="form-control form-control-lg" name="category" id="category">
                                 <option disabled selected>Choose a post category...</option>
                                 <option value="1">Symfony</option>
@@ -48,7 +47,7 @@
                             <textarea class="form-control form-control-lg" id="content" name="content" type="text" value="" placeholder="Enter your content post..." style="height: 10rem"></textarea>
                             <div class="invalid-feedback">An article is required.</div>
                         </div>
-                        <button class="btn btn-primary-outline p-3" id="submitButton" name="submitAddPost" type="submit" value="submit">Add this Post</button>
+                        <button class="btn btn-secondary-outline p-3" id="submitButton" name="submitAddPost" type="submit" value="submit">Add this Post</button>
                     </form>
                 </div>
             </div>
