@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Core\Get;
 use App\Core\POST;
 use App\Models\UsersManager;
+use App\Models\CategoriesManager;
 use App\Core\Session;
 use App\Core\Toolbox;
 /**
@@ -28,11 +29,14 @@ class HomeController extends MainController
     public function home()
     {
         $user = new UsersManager(DBNAME, HOST, USERNAME, PASSWORD);
+        $categoryManager = new CategoriesManager(DBNAME, HOST, USERNAME, PASSWORD);
+
 
         $data_page = [
             "page_description" => "Description de la page d'accueil",
             "page_title" => "Accueil",
             "view" => "../Views/home.view.php",
+            "categories" => $categoryManager->getAllCategories(),
             "template" => "../Views/common/template.view.php"
         ];
 

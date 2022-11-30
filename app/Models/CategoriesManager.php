@@ -22,6 +22,26 @@ class CategoriesManager extends Model
         return $datas;
     }
     /**
+     * Returns Posts by Categorie and pagination
+     * @param int $id id of category
+     * @param int $start id of category
+     * @param int $nbrOfElementbyPage number of posts by page
+     */
+    public function getPostsbyCategory(int $id, int $start,int $nbrOfElementbyPage)
+    {
+        $sql = "SELECT P.*, C.name 
+        FROM Posts P, Categories C
+        WHERE P.id_category = C.id
+        AND C.id = $id
+        ORDER BY P.created_at DESC
+        LIMIT $start, $nbrOfElementbyPage";
+        $req = $this->getPdo()->prepare($sql);
+        $req->execute();
+        $datas = $req->fetchAll(PDO::FETCH_ASSOC);
+        $req->closeCursor();
+        return $datas;
+    }
+    /**
      * Returns number of posts by category
      * @param int $id Id of the category
      */
