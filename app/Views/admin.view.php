@@ -1,17 +1,16 @@
 <div class="container">
-    <!-- Alert Message -->
     <?php
-    $session = new App\Core\Session();
-    if ($session->existsAttribute("alert")) : ?>
-        <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
-            <?= $session->getAttribute("alert")["message"]; ?>
-        </div>
-    <?php
+        $session = new App\Core\Session();
+        if ($session->existsAttribute("alert")) : ?>
+                <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
+                    <?= $session->getAttribute("alert")["message"]; ?>
+                </div>
+        <?php
         $session->unset("alert");
-    endif;
+        endif;
     ?>
-    <!-- Heading Row-->
-    <div class="row gx-4 gx-lg-5 align-items-center my-5">
+     <!-- Heading Row-->
+     <div class="row gx-4 gx-lg-5 align-items-center my-5">
         <div class="col-lg-7">
             <img class="img-fluid rounded mb-4 mb-lg-0 shadow" width=100% src="assets/img/settings-gears.png" alt="..." />
         </div>
@@ -30,27 +29,27 @@
                 <table class="dataTable table table-bordered" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Registration date</th>
+                            <th >Name</th>
+                            <th >Email</th>
+                            <th >Registration date</th>
                             <th class="text-center">Statut</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Registration date</th>
+                            <th >Name</th>
+                            <th >Email</th>
+                            <th >Registration date</th>
                             <th class="text-center">Statut</th>
                         </tr>
                     </tfoot>
                     <tbody>
                         <?php foreach ($users_list as $user) : ?>
                             <tr>
-                                <td class="align-middle"><?= $user["name"] . " " . $user["firstname"] ?></td>
+                                <td class="align-middle"><?= $user["name"]." ".$user["firstname"] ?></td>
                                 <td class="align-middle">
                                     <a href="mailto: <?= $user["email"] ?>">
-                                        <?= $user["email"] ?>
+                                    <?= $user["email"] ?>
                                     </a>
                                 </td>
                                 <td class="align-middle"><?= $user["created_at"] ?></td>
@@ -60,7 +59,7 @@
                                     </a>
                                 </td>
                             </tr>
-                        <?php endforeach; ?>
+                        <?php endforeach ; ?>  
                     </tbody>
                 </table>
             </div>
@@ -151,33 +150,37 @@
                         </tr>
                     </tfoot>
                     <tbody>
-
-                        <tr>
-                            <td>
-
-                            </td>
-                            <td>
-
-                            </td>
-                            <td>
-
-                            </td>
-                            <td class="align-middle">
-                                <a href="mailto:">
-
-                                </a>
-                            </td>
-                            <td class="align-middle text-center">
-                                <div class="d-flex justify-content-center">
-                                    <a href="validateComment?id=" class="btn btn-outline-success m-1">Validate Comment</a>
-                                    <a href="deleteComment?id=" class="btn btn-outline-danger m-1">Delete Comment</a>
-                                </div>
-                            </td>
-                        </tr>
-
+                        <?php 
+                        foreach($pending_comments_list as $comment) :?>
+                            <tr>
+                                <td>
+                                    <?= $comment["title"]; ?>
+                                </td>
+                                <td>
+                                    <?= $comment["created_at"]; ?>
+                                </td>
+                                <td>
+                                    <?= $comment["content"]; ?>
+                                </td>
+                                <td class="align-middle">
+                                    <a href="mailto: <?= $comment["email"] ?>">
+                                    <?= $comment["email"]; ?>
+                                    </a>
+                                </td>
+                                <td class="align-middle text-center">
+                                    <div class="d-flex justify-content-center">
+                                        <a href="validateComment?id=<?= $comment["id"] ?>" class="btn btn-outline-success m-1">Validate Comment</a>
+                                        <a href="deleteComment?id=<?= $comment["id"] ?>" class="btn btn-outline-danger m-1">Delete Comment</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php endforeach ?>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 </div>
+
+
+</div class="my-5">
