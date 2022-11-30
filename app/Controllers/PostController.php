@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\PostsManager;
+use App\Models\CommentsManager;
 use App\Core\Session;
 use App\Core\Get;
 use App\Core\Toolbox;
@@ -26,6 +27,8 @@ class PostController extends MainController
     {
         if($this->superglobalGet){
         $post = new PostsManager(DBNAME, HOST, USERNAME, PASSWORD);
+        $comments = new CommentsManager(DBNAME, HOST, USERNAME, PASSWORD);
+
 
         $data_page = [
             "page_description" => "Post page",
@@ -33,6 +36,7 @@ class PostController extends MainController
             "view" => "../Views/post.view.php",
             "page_css" => "post.css",
             "post" => $post->getPost($this->superglobalGetId),
+            "comments" => $comments->getPostsCommentsAllowed($this->superglobalGetId),
             "template" => "../Views/Common/template.view.php"
         ];
 
