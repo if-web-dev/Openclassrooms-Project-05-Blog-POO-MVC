@@ -48,10 +48,14 @@
     <nav class="d-flex justify-content-center my-5">
         <ul class="pagination">
             <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <?php
+            for($i=1; $i<=($nbr_of_pages);$i++) : ?>
                 <li class="page-item">
-                    <a class="page-link" href="?page=">
+                    <a class="page-link" href="?page=<?= $i ?>">
+                        <?php echo $i ;?>
                     </a>
                 </li>
+            <?php endfor ?>
             <li class="page-item"><a class="page-link" href="#">Next</a></li>
         </ul>
     </nav>

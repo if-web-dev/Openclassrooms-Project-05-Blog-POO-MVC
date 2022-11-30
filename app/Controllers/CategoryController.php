@@ -2,44 +2,55 @@
 
 namespace App\Controllers;
 
-use App\Models\PostsManager;
 use App\Core\GET;
+use App\Core\Securite;
+use App\Core\Toolbox;
+use App\Services\Mail;
+use App\Models\PostsManager;
+use App\Models\CategoriesManager;
 /**
- * Encapsulates the post list controller
- * and generates the post list page
+ * Encapsulates the category controller and return
+ * Posts lists by category
  */
-class PostsListController extends MainController
+class CategoryController extends MainController
 {
+    /**
+     * generates posts list by category
+     */
     private $superglobalGetPageNbr;
 
     public function __construct()
     {
-        $this->superglobalGetPageNbr = GET::key("page");
+       $this->superglobalGetPageNbr = GET::key("page");
+       $this->superglobalGetId = GET::key("id");
     }
-    /**
-    * Generates the post list page
-    */
-    public function postslist()
+
+    public function getCategoryPostList()
     {
-        
+        $postsCategories = new CategoriesManager(DBNAME, HOST, USERNAME, PASSWORD);
         $posts = new PostsManager(DBNAME, HOST, USERNAME, PASSWORD);
-        $nbrOfElement = $posts->getNbrOfPosts();
+
+    
+        $nbrOfElement = $postsCategories->getNbrOfPostsbyCategory($this->superglobalGetId);
         if($this->superglobalGetPageNbr==null){
             $this->superglobalGetPageNbr=1;
         }
         $nbrElementsByPage = 5;
         $nbrOfPages=ceil($nbrOfElement/$nbrElementsByPage);
         $begin = ($this->superglobalGetPageNbr-1)*$nbrElementsByPage;
+        $postsList = $postsCategories->getPostsbyCategory($this->superglobalGetId, $begin,$nbrElementsByPage);
+
 
         $data_page = [
             "page_description" => "PostsListPage",
             "page_title" => "PostsListPage",
-            "view" => "../Views/postslist.view.php",
+            "view" => "../Views/categoryPostslist.view.php",
             "page_css" => "postsList.css",
-            "posts_list" => $posts->getPaginationPostsList($begin,$nbrElementsByPage),
+            "posts_list" => $postsList,
             "nbr_of_pages" => $nbrOfPages,
             "template" => "../Views/Common/template.view.php"
         ];
+       
 
         $this->generatePage($data_page);
 

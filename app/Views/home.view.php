@@ -1,16 +1,17 @@
+
 <!-- Page Content-->
 <div class="container px-4 px-lg-5 main-content">
-    <!-- Alert Message -->
     <?php
-    $session = new App\Core\Session();
-    if ($session->existsAttribute("alert")) : ?>
-        <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
-            <?= $session->getAttribute("alert")["message"]; ?>
-        </div>
-    <?php
-    $session->unset("alert");
-    endif;
+        $session = new App\Core\Session();
+        if ($session->existsAttribute("alert")) : ?>
+                <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
+                    <?= $session->getAttribute("alert")["message"]; ?>
+                </div>
+        <?php
+        $session->unset("alert");
+        endif;
     ?>
+
     <!-- Heading Row-->
     <div class="row gx-4 gx-lg-5 align-items-center my-5">
         <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0 shadow" src="assets/img/img-home.png" alt="..." /></div>
@@ -29,5 +30,13 @@
     </div>
     <!-- Content Row-->
     <div class="row gx-4 gx-lg-5">
+        <?php foreach($categories as $categorie) :?>
+            <div class="col-md-6 col-lg-4 mb-5">
+                <a href="category?id=<?= $categorie["id"] ?>">
+                    <img class="rounded shadow" src="assets/img/catégories/<?= $categorie["name"] ?>.png" width=100% alt="...">
+                </a>
+            </div>
+        <?php endforeach ;?>         
+        </div>
     </div>
 </div>
