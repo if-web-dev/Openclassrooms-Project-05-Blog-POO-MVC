@@ -5,10 +5,9 @@ session_start();
 use App\Exceptions\RouteNotFoundException;
 use App\Router\Router;
 
-
+require "../../vendor/autoload.php";
 require "../Config/Route.php";
 require "../Config/Constant.php";
-require "../../vendor/autoload.php";
 
 $router = new Router();
 //var_dump($routes, $_SERVER("REQUEST_URI"));

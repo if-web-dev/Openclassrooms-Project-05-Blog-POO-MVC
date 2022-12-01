@@ -15,8 +15,8 @@
             <img class="img-fluid rounded mb-4 mb-lg-0 shadow" width=100% src="assets/img/catégories/<?= $posts_list[0]['name'] ?>.png" alt="..." />
         </div>
         <div class="col-lg-5">
-            <h1 class="font-weight-light"><?= $posts_list[0]['name'] ?> Posts List</h1>
-            <p>In this page you find all ours <?= $posts_list[0]['name'] ?> posts</p>
+            <h1 class="font-weight-light"><?= htmlspecialchars($posts_list[0]['name']) ?> Posts List</h1>
+            <p>In this page you find all ours <?= htmlspecialchars($posts_list[0]['name']) ?> posts</p>
         </div>
     </div>
     <!-- Posts List -->
@@ -24,22 +24,22 @@
         <div class="card my-5 shadow">
             <div class="card-body">
                 <h2>
-                    <?= $post["title"] ?>
+                    <?= htmlspecialchars($post["title"]) ?>
                 </h2>
                 <h3>
-                    <?= $post["chapo"] ?>
+                    <?= htmlspecialchars($post["chapo"]) ?>
                 </h3>
                 <small>
-                    <?= $post["created_at"] ?>
+                    <?= htmlspecialchars($post["created_at"]) ?>
                     <a href="category?id=<?= App\Core\Get::key('id');?>">
-                        <?= $post["name"] ?>
+                        <?= htmlspecialchars($post["name"]) ?>
                     </a>
                 </small>
                 <p>
-                    <?= $post["excerpt"] ?>
+                    <?= htmlspecialchars($post["excerpt"]) ?>
                 </p>
                 <a>
-                    <a href="/post?id=<?= $post["id"] ?>" class="btn btn-outline-secondary">Lire plus</a>
+                    <a href="/post?id=<?= htmlspecialchars($post["id"]) ?>" class="btn btn-outline-secondary">Lire plus</a>
                 </a>
             </div>
         </div>

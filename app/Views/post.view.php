@@ -3,7 +3,7 @@
         $session = new App\Core\Session();
         if ($session->existsAttribute("alert")) : ?>
                 <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
-                    <?= $session->getAttribute("alert")["message"]; ?>
+                    <?= htmlspecialchars($session->getAttribute("alert")["message"]); ?>
                 </div>
         <?php
         $session->unset("alert");
@@ -13,17 +13,17 @@
     <div class="card m-3 my-5 shadow">
         <div class="card-body">
             <h2>
-                <?= $post["title"] ?>
+                <?= htmlspecialchars($post["title"]) ?>
             </h2>
             <h3>
-                <?= $post["chapo"] ?>
+                <?= htmlspecialchars($post["chapo"]) ?>
             </h3>
             <small class="my-3">
-                <?= $post["created_at"] ?>
-                <?= $post["name"] ?>
+                <?= htmlspecialchars($post["created_at"]) ?>
+                <?= htmlspecialchars($post["name"]) ?>
             </small>
             <p class="my-3">
-                <?= $post["content"] ?>
+                <?= htmlspecialchars($post["content"]) ?>
             </p>
         </div>
         <div class="p-3">
@@ -33,11 +33,11 @@
                 <?php foreach($comments as $comment):?>
                     <div class="media-body mx-3">
                         <h5 class="mt-0 font400 clearfix">
-                            <?= $comment["name"] ?>
-                            <?= $comment["firstname"] ?>
+                            <?= htmlspecialchars($comment["name"]) ?>
+                            <?= htmlspecialchars($comment["firstname"]) ?>
                         </h5>
                         <p>
-                            <?= $comment["content"]?>
+                            <?= htmlspecialchars($comment["content"])?>
                         </p>
                     </div>
                 <?php endforeach; ?> 

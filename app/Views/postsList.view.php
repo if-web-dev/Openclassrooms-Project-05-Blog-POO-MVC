@@ -1,10 +1,12 @@
 <div class="container main-content">
-    <?php if (!empty($_SESSION["alert"])) : ?>
-        <div class="alert <?= $_SESSION["alert"]["type"]; ?> mt-5" role="alert">
-            <?= $_SESSION["alert"]["message"]; ?>
+    <?php
+    $session = new App\Core\Session();
+    if ($session->existsAttribute("alert")) : ?>
+        <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
+            <?= htmlspecialchars($session->getAttribute("alert")["message"]); ?>
         </div>
     <?php
-        unset($_SESSION["alert"]);
+        $session->unset("alert");
     endif;
     ?>
      <!-- Heading Row-->
@@ -22,22 +24,22 @@
         <div class="card my-5 shadow">
             <div class="card-body">
                 <h2>
-                    <?= $article["title"] ?>
+                    <?= htmlspecialchars($article["title"])?>
                 </h2>
                 <h3>
-                    <?= $article["chapo"] ?>
+                    <?= htmlspecialchars($article["chapo"]) ?>
                 </h3>
                 <small>
-                    <?= $article["created_at"] ?>
-                    <a href="category?id=<?= $article['id_category']?>">
-                        <?= $article["name"] ?>
+                    <?= htmlspecialchars($article["created_at"]) ?>
+                    <a href="category?id=<?= htmlspecialchars($article['id_category'])?>">
+                        <?= htmlspecialchars($article["name"]) ?>
                     </a>
                 </small>
                 <p>
-                    <?= $article["excerpt"] ?>
+                    <?= htmlspecialchars($article["excerpt"]) ?>
                 </p>
                 <a>
-                    <a href="/post?id=<?= $article["id"] ?>" class="btn btn-outline-secondary">Lire plus</a>
+                    <a href="/post?id=<?= htmlspecialchars($article["id"]) ?>" class="btn btn-outline-secondary">Lire plus</a>
                 </a>
             </div>
         </div>

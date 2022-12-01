@@ -3,7 +3,7 @@
         $session = new App\Core\Session();
         if ($session->existsAttribute("alert")) : ?>
                 <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
-                    <?= $session->getAttribute("alert")["message"]; ?>
+                    <?= htmlspecialchars($session->getAttribute("alert")["message"]); ?>
                 </div>
         <?php
         $session->unset("alert");
@@ -46,15 +46,15 @@
                     <tbody>
                         <?php foreach ($users_list as $user) : ?>
                             <tr>
-                                <td class="align-middle"><?= $user["name"]." ".$user["firstname"] ?></td>
+                                <td class="align-middle"><?= htmlspecialchars($user["name"])." ".htmlspecialchars($user["firstname"]) ?></td>
                                 <td class="align-middle">
-                                    <a href="mailto: <?= $user["email"] ?>">
+                                    <a href="mailto: <?= htmlspecialchars($user["email"]) ?>">
                                     <?= $user["email"] ?>
                                     </a>
                                 </td>
-                                <td class="align-middle"><?= $user["created_at"] ?></td>
+                                <td class="align-middle"><?= htmlspecialchars($user["created_at"]) ?></td>
                                 <td class="align-middle text-center">
-                                    <a href="deleteUser?id=<?= $user["id"] ?>" class="btn btn-outline-danger">
+                                    <a href="deleteUser?id=<?= htmlspecialchars($user["id"]) ?>" class="btn btn-outline-danger">
                                         Delete Account
                                     </a>
                                 </td>
@@ -96,24 +96,24 @@
                         <?php foreach($posts_list as $post) :?>
                             <tr>
                                 <td class="align-middle">
-                                    <a href="post?id=<?= $post["id"] ?>">
-                                        <?= $post["title"] ?>
+                                    <a href="post?id=<?= htmlspecialchars($post["id"]) ?>">
+                                        <?= htmlspecialchars($post["title"]) ?>
                                     </a>
                                 </td>
                                 <td class="align-middle">
-                                    <?= $post["created_at"] ?>
+                                    <?= htmlspecialchars($post["created_at"]) ?>
                                 </td>
                                 <td class="align-middle">
-                                    <?= $post["update_at"] ?>
+                                    <?= htmlspecialchars($post["update_at"]) ?>
                                 </td>
                                 <td class="align-middle">
-                                    <?= $post["name"] ?>
+                                    <?= htmlspecialchars($post["name"]) ?>
                                 </td>
 
                                 <td class="align-middle text-center">
                                     <div class="d-flex justify-content-center">
-                                    <a href="updatePost?id=<?= $post["id"] ?>" class="btn btn-outline-warning m-1">Edit Post</a>
-                                    <a href="deletePost?id=<?= $post["id"] ?>" class="btn btn-outline-danger m-1">Delete Post</a>
+                                    <a href="updatePost?id=<?= htmlspecialchars($post["id"]) ?>" class="btn btn-outline-warning m-1">Edit Post</a>
+                                    <a href="deletePost?id=<?= htmlspecialchars($post["id"]) ?>" class="btn btn-outline-danger m-1">Delete Post</a>
                                     </div>
                                 </td>
                             </tr>
@@ -154,23 +154,23 @@
                         foreach($pending_comments_list as $comment) :?>
                             <tr>
                                 <td>
-                                    <?= $comment["title"]; ?>
+                                    <?= htmlspecialchars($comment["title"]); ?>
                                 </td>
                                 <td>
-                                    <?= $comment["created_at"]; ?>
+                                    <?= htmlspecialchars($comment["created_at"]); ?>
                                 </td>
                                 <td>
-                                    <?= $comment["content"]; ?>
+                                    <?= htmlspecialchars($comment["content"]); ?>
                                 </td>
                                 <td class="align-middle">
-                                    <a href="mailto: <?= $comment["email"] ?>">
-                                    <?= $comment["email"]; ?>
+                                    <a href="mailto: <?= htmlspecialchars($comment["email"]); ?>">
+                                    <?= htmlspecialchars($comment["email"]); ?>
                                     </a>
                                 </td>
                                 <td class="align-middle text-center">
                                     <div class="d-flex justify-content-center">
-                                        <a href="validateComment?id=<?= $comment["id"] ?>" class="btn btn-outline-success m-1">Validate Comment</a>
-                                        <a href="deleteComment?id=<?= $comment["id"] ?>" class="btn btn-outline-danger m-1">Delete Comment</a>
+                                        <a href="validateComment?id=<?= htmlspecialchars($comment["id"]); ?>" class="btn btn-outline-success m-1">Validate Comment</a>
+                                        <a href="deleteComment?id=<?= htmlspecialchars($comment["id"]); ?>" class="btn btn-outline-danger m-1">Delete Comment</a>
                                     </div>
                                 </td>
                             </tr>

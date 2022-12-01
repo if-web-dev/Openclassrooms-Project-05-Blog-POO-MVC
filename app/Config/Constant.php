@@ -1,9 +1,13 @@
 <?php
 
+namespace App\Config;
+
+use App\Core\Server;
+
 /*URL constant - to search for resources at the root of the site*/
 
-define("URL", str_replace("index.php", "", (isset($_SERVER['HTTPS']) ? "https" : "http") .
-    "://" . $_SERVER['HTTP_HOST'] . $_SERVER["PHP_SELF"]));
+define("URL", str_replace("index.php", "", (Server::key("HTTPS")) ? "https" : "http") .
+    "://" . Server::key('HTTP_HOST') . Server::key("PHP_SELF"));
 
 /*database access constants */
 
