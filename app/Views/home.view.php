@@ -18,7 +18,8 @@
         <div class="col-lg-5">
             <h1 class="font-weight-light">Home Page</h1>
             <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components.</p>
-            <a class="btn btn-outline-dark p-3" href="#!">Call to Action!</a>
+            <p>We introduce to you a blog in mvc</p>
+            <a class="btn btn-outline-dark p-3" href="pageCv">About Me!</a>
         </div>
     </div>
     <!-- Call to Action-->
