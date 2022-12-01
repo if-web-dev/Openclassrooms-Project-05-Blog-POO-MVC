@@ -12,6 +12,7 @@
                     <li class="nav-item"><a class="nav-link" href="admin">Admin</a></li>
                 <?php endif ; ?>
                  <li class="nav-item"><a class="nav-link" href="postslist">Postslist</a></li>
+                 <li class="nav-item"><a class="nav-link" href="pageCv">About me</a></li>
                  <li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
                 <?php 
                  $session = new App\Core\Session();

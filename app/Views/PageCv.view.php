@@ -1,0 +1,1 @@
+<embed class="main-content" src="assets/img/cv-web-dev.pdf" width=100% type="application/pdf"/>

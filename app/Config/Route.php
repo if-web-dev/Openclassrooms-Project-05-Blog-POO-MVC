@@ -2,6 +2,7 @@
 
 //Pages
 $routes["/home"] = ["App\Controllers\HomeController", "home"];
+$routes["/pageCv"] = ["App\Controllers\PageCvController", "PageCv"];
 $routes["/postslist"] = ["App\Controllers\PostsListController", "postslist"];
 $routes["/admin"] = ["App\Controllers\Admin\AdminController", "admin"];
 $routes["/post"] = ["App\Controllers\PostController", "post"];
