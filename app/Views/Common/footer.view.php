@@ -30,6 +30,6 @@
             </div>
         </footer>
         <!-- Copyright Section-->
-        <div class="copyright py-4 text-center text-white bg-secondary">
-            <div class="container">Copyright IF-WEB-DEV &copy; | 2022 </div>
+        <div class="copyright py-2 m-0 text-center text-white bg-secondary">
+            <div class="container">Copyright © Blog OP Project 5 | Designed by If-web-dev</div>
         </div>

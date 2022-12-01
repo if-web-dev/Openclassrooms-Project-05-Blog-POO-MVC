@@ -22,7 +22,7 @@
     <!-- DataTables UserList -->
     <div class="card shadow my-5">
         <div class="card-header py-3">
-            <h5 class="m-0 font-weight-bold text-primary">Users List</h5>
+            <h4 class="m-0 font-weight-bold text-dark">Users List</h4>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -68,7 +68,7 @@
     <!--DataTables Posts-->
     <div class="card shadow my-5">
         <div class="card-header py-3 d-flex align-items-center">
-            <h5 class="m-0 font-weight-bold text-primary">Posts List</h5>
+            <h4 class="m-0 font-weight-bold text-dark">Posts List</h4>
             <a href="addPost" class="btn btn-primary shadow mx-2">+ Add a Post</a>
         </div>
         <div class="card-body">
@@ -126,7 +126,7 @@
     <!--DataTables Comments -->
     <div class="card shadow my-5">
         <div class="card-header py-3 d-flex align-items-center">
-            <h5 class="m-0 font-weight-bold text-primary">Pending comments list</h5>
+            <h4 class="m-0 font-weight-bold text-dark">Pending comments list</h4>
         </div>
         <div class="card-body">
             <div class="table-responsive">

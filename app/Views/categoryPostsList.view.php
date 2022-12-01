@@ -12,7 +12,7 @@
      <!-- Heading Row-->
      <div class="row gx-4 gx-lg-5 align-items-center my-5">
         <div class="col-lg-7">
-            <img class="img-fluid rounded mb-4 mb-lg-0 shadow" width=100% src="assets/img/newspaper.jpg" alt="..." />
+            <img class="img-fluid rounded mb-4 mb-lg-0 shadow" width=100% src="assets/img/catégories/<?= $posts_list[0]['name'] ?>.png" alt="..." />
         </div>
         <div class="col-lg-5">
             <h1 class="font-weight-light"><?= $posts_list[0]['name'] ?> Posts List</h1>
