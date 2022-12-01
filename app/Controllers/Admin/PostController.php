@@ -97,7 +97,6 @@ class PostController extends MainController
 
                 if(is_array($data_filtered)){
 
-                    var_dump("mimp");
                     $posts = new PostsManager(DBNAME, HOST, USERNAME, PASSWORD);
                     $posts->addPost($data_filtered);
                     Toolbox::addAlertMessage("Post added successfully", Toolbox::GREEN_COLOR);

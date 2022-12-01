@@ -2,7 +2,7 @@
     <?php
     $session = new App\Core\Session();
     if ($session->existsAttribute("alert")) : ?>
-        <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
+        <div class="alert <?= htmlspecialchars($session->getAttribute("alert")["type"]); ?> mt-5" role="alert">
             <?= htmlspecialchars($session->getAttribute("alert")["message"]); ?>
         </div>
     <?php
@@ -51,8 +51,8 @@
             <?php
             for($i=1; $i<=($nbr_of_pages);$i++) : ?>
                 <li class="page-item">
-                    <a class="page-link" href="?page=<?= $i ?>">
-                        <?php echo $i ;?>
+                    <a class="page-link" href="?page=<?= htmlspecialchars($i) ?>">
+                        <?= htmlspecialchars($i) ;?>
                     </a>
                 </li>
             <?php endfor ?>

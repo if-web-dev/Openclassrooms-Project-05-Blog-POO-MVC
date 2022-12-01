@@ -2,7 +2,7 @@
     <?php
         $session = new App\Core\Session();
         if ($session->existsAttribute("alert")) : ?>
-                <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
+                <div class="alert <?= htmlspecialchars($session->getAttribute("alert")["type"]); ?> mt-5" role="alert">
                     <?= htmlspecialchars($session->getAttribute("alert")["message"]); ?>
                 </div>
         <?php
@@ -49,7 +49,7 @@
                                 <td class="align-middle"><?= htmlspecialchars($user["name"])." ".htmlspecialchars($user["firstname"]) ?></td>
                                 <td class="align-middle">
                                     <a href="mailto: <?= htmlspecialchars($user["email"]) ?>">
-                                    <?= $user["email"] ?>
+                                    <?= htmlspecialchars($user["email"]) ?>
                                     </a>
                                 </td>
                                 <td class="align-middle"><?= htmlspecialchars($user["created_at"]) ?></td>

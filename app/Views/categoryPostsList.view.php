@@ -2,8 +2,8 @@
     <?php
         $session = new App\Core\Session();
         if ($session->existsAttribute("alert")) : ?>
-                <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
-                    <?= $session->getAttribute("alert")["message"]; ?>
+                <div class="alert <?= htmlspecialchars($session->getAttribute("alert")["type"]); ?> mt-5" role="alert">
+                    <?= htmlspecialchars($session->getAttribute("alert")["message"]); ?>
                 </div>
         <?php
         $session->unset("alert");
@@ -12,7 +12,7 @@
      <!-- Heading Row-->
      <div class="row gx-4 gx-lg-5 align-items-center my-5">
         <div class="col-lg-7">
-            <img class="img-fluid rounded mb-4 mb-lg-0 shadow" width=100% src="assets/img/catégories/<?= $posts_list[0]['name'] ?>.png" alt="..." />
+            <img class="img-fluid rounded mb-4 mb-lg-0 shadow" width=100% src="assets/img/catégories/<?= htmlspecialchars($posts_list[0]['name']) ?>.png" alt="..." />
         </div>
         <div class="col-lg-5">
             <h1 class="font-weight-light"><?= htmlspecialchars($posts_list[0]['name']) ?> Posts List</h1>
@@ -51,8 +51,8 @@
             <?php
             for($i=1; $i<=($nbr_of_pages);$i++) : ?>
                 <li class="page-item">
-                    <a class="page-link" href="?page=<?= $i ?>">
-                        <?php echo $i ;?>
+                    <a class="page-link" href="?page=<?= htmlspecialchars($i) ?>">
+                        <?= htmlspecialchars($i) ;?>
                     </a>
                 </li>
             <?php endfor ?>

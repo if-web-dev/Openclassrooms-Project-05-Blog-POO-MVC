@@ -2,7 +2,7 @@
     <?php
     $session = new App\Core\Session();
     if ($session->existsAttribute("alert")) : ?>
-        <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
+        <div class="alert <?= htmlspecialchars($session->getAttribute("alert")["type"]); ?> mt-5" role="alert">
             <?= htmlspecialchars($session->getAttribute("alert")["message"]); ?>
         </div>
     <?php
@@ -18,7 +18,7 @@
         <div class="card-body">
             <div class="row justify-content-center mb-5">
                 <div>☺
-                    <form method="post" action="postProcessing?id=<?= $dataPostDB["id"] ?>">
+                    <form method="post" action="postProcessing?id=<?= htmlspecialchars($dataPostDB["id"]) ?>">
                         <!-- Category input-->
                         <div class="my-4">
                             <select class="form-control form-control-lg" name="category" id="category">
