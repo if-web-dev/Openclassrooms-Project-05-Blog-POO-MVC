@@ -1,5 +1,6 @@
 # Openclassrooms-Project-05-Blog-POO-MVC
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0856878b414f4eb0be2d2d464d07a78e)](https://app.codacy.com/gh/if-web-dev/Openclassrooms-Project-05-Blog-POO-MVC?utm_source=github.com&utm_medium=referral&utm_content=if-web-dev/Openclassrooms-Project-05-Blog-POO-MVC&utm_campaign=Badge_Grade_Settings)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/a636a389838041cb98fc65c2e914567c)](https://www.codacy.com/gh/if-web-dev/Openclassrooms-Project-05-Blog-POO-MVC/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=if-web-dev/Openclassrooms-Project-05-Blog-POO-MVC&amp;utm_campaign=Badge_Grade)
 
 We present project 5 of the PHP/Symfony application developer course. It's a blog in PHP POO MVC with an Admin panel to manage users, posts and comments. 
