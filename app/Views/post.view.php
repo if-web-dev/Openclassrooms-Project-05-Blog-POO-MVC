@@ -49,8 +49,7 @@
                 <h4 class="mb40 font500">Post a comment</h4>
                 <form method="post" action="recordComment?id=<?= htmlspecialchars(App\Core\Get::key("id"))?>" >
                     <div class="form-group my-2">
-                        <textarea class="form-control" rows="5" name="comment">
-                        </textarea>
+                        <textarea class="form-control" rows="5" name="comment"></textarea>
                     </div>
                     <div class="my-2">
                         <button type="submit" class="btn btn-outline-dark btn-lg">Submit</button>

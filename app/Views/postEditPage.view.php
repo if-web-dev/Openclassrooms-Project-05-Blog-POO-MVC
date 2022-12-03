@@ -47,10 +47,10 @@
                             <div class="invalid-feedback">An article is required.</div>
                         </div>
                         <input type="hidden" id="id" name="id" value="<?= htmlspecialchars($dataPostDB["id"]) ?>">
-                        <button class="btn btn-outline-secondary py-3" id="submitButton" name="submitEditPost" type="submit" value="submit">Modifie this Post</button>
+                        <button class="btn btn-outline-secondary py-3" id="submitButton" name="submitEditPost" type="submit" value="submit">Modify this Post</button>
                     </form>
                 </div>
-            </div>☺
+            </div>
         </div>
     </div>
 </div>
