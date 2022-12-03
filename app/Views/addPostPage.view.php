@@ -1,19 +1,20 @@
 <div class="container">
+    <!--Alert Message -->
     <?php
-        $session = new App\Core\Session();
-        if ($session->existsAttribute("alert")) : ?>
-                <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
-                    <?= $session->getAttribute("alert")["message"]; ?>
-                </div>
-        <?php
-        $session->unset("alert");
-        endif;
+    $session = new App\Core\Session();
+    if ($session->existsAttribute("alert")) : ?>
+            <div class="alert <?= htmlspecialchars($session->getAttribute("alert")["type"]); ?> mt-5" role="alert">
+                <?= htmlspecialchars($session->getAttribute("alert")["message"]); ?>
+            </div>
+    <?php
+    $session->unset("alert");
+    endif;
     ?>
     <h1 class="my-5 text-center">Add a post</h1>
     <!-- Create an Article -->
     <div class="card shadow my-5">
         <div class="card-header py-3">
-            <h5 class="m-0 font-weight-bold text-primary">Add a Post</h5>
+            <h5 class="m-0 font-weight-bold text-dark">Add a Post</h5>
         </div>
         <div class="card-body">
             <div class="row justify-content-center mb-5">
@@ -47,7 +48,7 @@
                             <textarea class="form-control form-control-lg" id="content" name="content" type="text" value="" placeholder="Enter your content post..." style="height: 10rem"></textarea>
                             <div class="invalid-feedback">An article is required.</div>
                         </div>
-                        <button class="btn btn-secondary-outline p-3" id="submitButton" name="submitAddPost" type="submit" value="submit">Add this Post</button>
+                        <button class="btn btn-outline-secondary p-3" id="submitButton" name="submitAddPost" type="submit" value="submit">Add this Post</button>
                     </form>
                 </div>
             </div>

@@ -100,8 +100,8 @@
             <?php
             $session = new App\Core\Session();
             if ($session->existsAttribute("alert")) : ?>
-                <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
-                    <?= $session->getAttribute("alert")["message"]; ?>
+                <div class="alert <?= htmlspecialchars($session->getAttribute("alert")["type"]); ?> mt-5" role="alert">
+                    <?= htmlspecialchars($session->getAttribute("alert")["message"]); ?>
                 </div>
             <?php
             $session->unset("alert");

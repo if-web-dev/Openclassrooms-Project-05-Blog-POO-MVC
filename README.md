@@ -30,7 +30,7 @@ This project was developed with PHP 7.4, it integrates the bootstrap, jquery, da
 * [Bootstrap](http://materializecss.com) - Framework CSS (front-end)
 * [Datatables](https://datatables.net/) - Framework CSS (front-end)
 * [Composer](https://getcomposer.org/) - Dependancy manager
-* [Visual Studio code](https://atom.io/) - Code edit
+* [Visual Studio code](https://atom.io/) - Code editor
 
 
 ## Author
