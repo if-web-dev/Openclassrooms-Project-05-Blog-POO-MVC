@@ -14,10 +14,10 @@ class Mail
     * @param string $email User email
     * @param string $name User Message
     */
-    public static function sendContactMail($name, $tel, $email, $message)
+    public static function sendContactMail(string $name,string $tel,string $email,string $message)
     {
         $to = $email;
-        $expediteur = MAILADRESS;
+        $expediteur ="i.fouhal@hotmail.com";//MAILADRESS
         $email_subject = "Blog Formulaire de contact: $name";
         $email_body = "Vous avez reçu un nouveau message à partir du formulaire de contact du blog.\n\n";
         $email_body .= "Details :\n\nNom: $name\nEmail: $email\nTéléphone: $tel\nMessage: $message\n";
@@ -34,9 +34,9 @@ class Mail
     * @param string $name User Name
     * @param string $firstname User Firstname
     * @param string $email User email
-    * @param string $name User Message
+    * @param int $validation_key User validation key
     */
-    public static function sendAccountActivationMail($name, $firstname, $email, $validation_key)
+    public static function sendAccountActivationMail(string $name,string $firstname,string $email,string $validation_key)
     {
         $to = $email;
         $expediteur = MAILADRESS;

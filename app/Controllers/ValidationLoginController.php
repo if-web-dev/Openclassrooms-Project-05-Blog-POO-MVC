@@ -79,6 +79,7 @@ class ValidationLoginController extends MainController
                         $UserManager->addUser($data_insert, $validation_key);
                         Mail::sendAccountActivationmail($data_insert["name"], $data_insert["firstname"], $data_insert["email"], $validation_key);
                         Toolbox::addAlertMessage("Account created, please activate it by clicking on the validation link received in your email box", Toolbox::GREEN_COLOR);
+                        //var_dump($data_input_filtered);
                         header("Location: " . URL . "home");
                     }
                 } else {
