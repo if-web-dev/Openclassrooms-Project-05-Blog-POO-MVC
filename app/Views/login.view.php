@@ -1,13 +1,13 @@
 <!-- Page Content -->
 <div class="container main-content">
     <div class="d-flex flex-column justify-content-center align-items-center h-100">
-        <!-- Alert Message -->
+       <!--Alert Message -->
         <?php
         $session = new App\Core\Session();
         if ($session->existsAttribute("alert")) : ?>
-            <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
-                <?= $session->getAttribute("alert")["message"]; ?>
-            </div>
+                <div class="alert <?= htmlspecialchars($session->getAttribute("alert")["type"]); ?> mt-5" role="alert">
+                    <?= htmlspecialchars($session->getAttribute("alert")["message"]); ?>
+                </div>
         <?php
         $session->unset("alert");
         endif;

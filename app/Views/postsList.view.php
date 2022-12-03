@@ -1,14 +1,16 @@
 <div class="container main-content">
-    <?php if (!empty($_SESSION["alert"])) : ?>
-        <div class="alert <?= $_SESSION["alert"]["type"]; ?> mt-5" role="alert">
-            <?= $_SESSION["alert"]["message"]; ?>
+    <?php
+    $session = new App\Core\Session();
+    if ($session->existsAttribute("alert")) : ?>
+        <div class="alert <?= $session->getAttribute("alert")["type"]; ?> mt-5" role="alert">
+            <?= $session->getAttribute("alert")["message"]; ?>
         </div>
     <?php
-        unset($_SESSION["alert"]);
+    $session->unset("alert");
     endif;
     ?>
-     <!-- Heading Row-->
-     <div class="row gx-4 gx-lg-5 align-items-center my-5">
+    <!-- Heading Row-->
+    <div class="row gx-4 gx-lg-5 align-items-center my-5">
         <div class="col-lg-7">
             <img class="img-fluid rounded mb-4 mb-lg-0 shadow" width=100% src="assets/img/newspaper.jpg" alt="..." />
         </div>
@@ -22,35 +24,35 @@
         <div class="card my-5 shadow">
             <div class="card-body">
                 <h2>
-                    <?= $article["title"] ?>
+                    <?= htmlspecialchars($article["title"]) ?>
                 </h2>
                 <h3>
-                    <?= $article["chapo"] ?>
+                    <?= htmlspecialchars($article["chapo"]) ?>
                 </h3>
                 <small>
-                    <?= $article["created_at"] ?>
-                    <a href="category?id=<?= $article['id_category']?>">
-                        <?= $article["name"] ?>
+                    <?= htmlspecialchars($article["created_at"]) ?>
+                    <a href="category?id=<?= htmlspecialchars($article['id_category']) ?>">
+                        <?= htmlspecialchars($article["name"]) ?>
                     </a>
                 </small>
                 <p>
-                    <?= $article["excerpt"] ?>
+                    <?= htmlspecialchars($article["excerpt"]) ?>
                 </p>
                 <a>
-                    <a href="/post?id=<?= $article["id"] ?>" class="btn btn-outline-secondary">Lire plus</a>
+                    <a href="/post?id=<?= htmlspecialchars($article["id"]) ?>" class="btn btn-outline-secondary">Lire plus</a>
                 </a>
             </div>
         </div>
     <?php endforeach ?>
     <!--Pagination -->
     <nav class="d-flex justify-content-center my-5">
-        <ul class="pagination"> 
+        <ul class="pagination">
             <li class="page-item"><a class="page-link" href="#">Previous</a></li>
             <?php
-            for($i=1; $i<=($nbr_of_pages);$i++) : ?>
+            for ($i = 1; $i <= ($nbr_of_pages); $i++) : ?>
                 <li class="page-item">
-                    <a class="page-link" href="?page=<?= $i ?>">
-                        <?php echo $i ;?>
+                    <a class="page-link" href="?page=<?= htmlspecialchars($i) ?>">
+                        <?= htmlspecialchars($i); ?>
                     </a>
                 </li>
             <?php endfor ?>

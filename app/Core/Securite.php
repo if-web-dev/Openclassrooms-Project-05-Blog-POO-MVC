@@ -12,24 +12,21 @@ class Securite
      */
     public static function test_input($datas)
     {
-
         foreach ($datas as $key => $data) {
             $data_filtered = stripslashes(trim(htmlspecialchars($data)));
-            $datas[$key] = $data_filtered ;
+            $datas[$key] = $data_filtered;
         }
-                
         return $datas;
     }
     /**
      * hashes a string and return it
      */
-    public static function passwordHash($datas){
-        foreach ($datas as $key => $data){
-            if($key ==="password"){
-                
-                    $password_hashed = password_hash($datas[$key], PASSWORD_DEFAULT);
-                    $datas["password"] = $password_hashed;
-                
+    public static function passwordHash($datas)
+    {
+        foreach ($datas as $key => $data) {
+            if ($key === "password") {
+                $password_hashed = password_hash($datas[$key], PASSWORD_DEFAULT);
+                $datas["password"] = $password_hashed;
             }
         }
 
@@ -68,40 +65,40 @@ class Securite
             // check if message is not empty
             if (empty($data_filtered["message"])) {
                 $message[] = "A message is required";
-            } 
+            }
         }
 
-        if(isset($data_filtered["content"])) {
+        if (isset($data_filtered["content"])) {
             // check if a post is not empty
-            if (empty($data_filtered["content"])){
+            if (empty($data_filtered["content"])) {
                 $message[] = "A Post is required";
             }
         }
 
-        if(isset($data_filtered["comment"])) {
+        if (isset($data_filtered["comment"])) {
             // check if a post is not empty
-            if (empty($data_filtered["comment"])){
+            if (empty($data_filtered["comment"])) {
                 $message[] = "A Comment is required";
             }
         }
 
-        if(isset($data_filtered["title"])) {
+        if (isset($data_filtered["title"])) {
             // check if title is not empty
-            if(empty($data_filtered["title"])){
+            if (empty($data_filtered["title"])) {
                 $message[] = "A title is required";
             }
         }
 
-        if(isset($data_filtered["chapo"])) {
+        if (isset($data_filtered["chapo"])) {
             // check if title is not empty
-            if(empty($data_filtered["chapo"])){
+            if (empty($data_filtered["chapo"])) {
                 $message[] = "A chapo is required";
             }
         }
 
-        if(isset($data_filtered["category"])) {
+        if (isset($data_filtered["category"])) {
             // check if category is empty
-            if(empty($data_filtered["category"])){
+            if (empty($data_filtered["category"])) {
                 $message[] = "A category is required";
             }
         }
@@ -136,7 +133,7 @@ class Securite
             }
         }
 
-        if(isset($message)){
+        if (isset($message)) {
             $feed_back = implode("<br>", $message);
         }
 
@@ -145,8 +142,9 @@ class Securite
     /**
      * Check for the presence of session variable
      */
-    public static function isAdminConnected(){
+    public static function isAdminConnected()
+    {
         $session = Session::getAttribute("profile");
-        return $session? $session["is_admin"]:false;
+        return $session ? $session["is_admin"] : false;
     }
 }
