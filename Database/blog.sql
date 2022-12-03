@@ -66,10 +66,7 @@ CREATE TABLE `comments` (
 INSERT INTO `comments` (`id`, `created_at`, `id_post`, `edited_by`, `content`, `is_accepted`) VALUES
 (1, '2022-11-13 08:05:58', 1, 1, 'Un article fort intéressant.', 0),
 (2, '2022-11-09 16:17:58', 2, 2, 'Un article fort bien rédigé !', 1),
-(4, '2022-11-24 18:18:35', 5, 1, '                        on est la ou pas\r\n', 1),
-(5, '2022-11-25 09:54:11', 6, 1, '                        discover', 1),
-(6, '2022-11-30 23:36:52', 5, 1, 'Cette fois ci sa roule?                        ', 1),
-(7, '2022-12-03 11:53:36', 6, 1, 'nouveau com', 1);
+(4, '2022-11-24 18:18:35', 5, 1, 'Cette fois ci sa roule? ', 1);
 
 -- --------------------------------------------------------
 
