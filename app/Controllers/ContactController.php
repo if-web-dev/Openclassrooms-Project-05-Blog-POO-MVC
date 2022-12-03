@@ -12,6 +12,7 @@ use App\Services\Mail;
 class ContactController extends MainController
 {
     private $superglobalPost;
+    private $superglobalPostSubmit;
 
     public function __construct()
     {
