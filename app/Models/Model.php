@@ -10,7 +10,6 @@ use PDO;
 abstract class Model
 {
     
-
     private $dbname;
     private $host;
     private $username;
@@ -35,7 +34,6 @@ abstract class Model
         PDO::MYSQL_ATTR_INIT_COMMAND => "SET CHARACTER SET UTF8"
         ]
         );
-
     }
 
 }

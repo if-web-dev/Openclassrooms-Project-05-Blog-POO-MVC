@@ -13,13 +13,11 @@ use App\Core\Toolbox;
  */
 class HomeController extends MainController
 {
-    private $superglobalPost;
     private $superglobalGetValidationKey;
     private $superglobalGetEmail;
 
     public function __construct()
     {
-        $this->superglobalPost = POST::all();
         $this->superglobalGetValidationKey = Get::key("validation_key");
         $this->superglobalGetEmail = Get::key("email");
     }

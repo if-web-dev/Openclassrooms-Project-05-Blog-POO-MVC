@@ -9,8 +9,8 @@ abstract class MainController
 {   /**
      * Returns the page with the data pages in parameters
      * @param array $data data pages
-     * @param string $view view url
-     * @param string $template template url
+     * @param string $view view's url
+     * @param string $template template's url
      */
     protected function generatePage(array $data)
     { 

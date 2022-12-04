@@ -72,7 +72,7 @@ class PostsManager extends Model
      * deletes a post from its id
      * @param int $id Id of the post
      */
-    public function deletePost($id)
+    public function deletePost(int $id)
     {
         $sql = 'DELETE FROM Posts WHERE id = ?';
         $stmt = $this->getPdo()->prepare($sql);
