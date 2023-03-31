@@ -3,9 +3,6 @@
 namespace App\Controllers;
 
 use App\Core\GET;
-use App\Core\Securite;
-use App\Core\Toolbox;
-use App\Services\Mail;
 use App\Models\PostsManager;
 use App\Models\CategoriesManager;
 /**
@@ -18,6 +15,7 @@ class CategoryController extends MainController
      * generates posts list by category
      */
     private $superglobalGetPageNbr;
+    private $superglobalGetId;
 
     public function __construct()
     {
