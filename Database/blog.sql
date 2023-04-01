@@ -125,10 +125,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `firstname`, `email`, `password`, `created_at`, `validation_key`, `tel`, `is_admin`, `is_actived`) VALUES
 (1, 'zidane', 'zinédine', 'zinedine.zidane@gmail.com', '$2y$10$D6Ug4u92G6ZKYLIxnDiEdeLJA3/S0FRGHQ5RXuPdz9rc.QBQSOrP2', '2022-11-02 09:48:39', 627, '0102030405', 1, 1),
 (2, 'ronaldo', 'christiano', 'christiano.ronaldo@gmail.com', '$2y$10$/i/NcEFPDPqJxMqhbyac..D.Ch77FpP/r94uYGkXnk.o64Patmtra', '2022-11-01 09:46:54', 124, '0102030405', 0, 0),
-(3, 'fouhal', 'ishake', 'i.fouhal@hotmail.com', '$2y$10$aDOgKD2Ndov3q66vmohhv.R0VMJmT3H73BmRH/uC9odqOlJE3Ca5W', '2022-11-30 13:40:33', 5184, NULL, 0, 1),
-(4, 'fouhal', 'ishake', 'ishake.fouhal@gmail.com', '$2y$10$SyORqEYFj5/5B9S3xBrQNOzCFcwyRqzNAVHxkQRVFZz5yiNi60oq2', '2022-12-03 10:15:48', 1472, NULL, 0, 0),
-(6, 'Admin', 'Admin', 'Admin@gmail.com', '$2y$10$v7ETPiwRPsl5Ul1gBb8SKeSqFsIegO3IxesVPRa7VUOOnVreTIQLy', '2022-12-03 22:52:14', 7727, NULL, 1, 1),
-(7, 'User', 'User', 'User@gmail.com', '$2y$10$in8H5FSkefXH/e2aWeOof.qWDQw8HGkinMudKXwSKWLgBxh557ZoG', '2022-12-03 22:53:09', 4255, NULL, 0, 1);
+(3, 'Admin', 'Admin', 'Admin@gmail.com', '$2y$10$R9cfrajcHPJmL3wle/IBgea6XUT6uvIvlcyuCruQtKHfOZHfY.Gei', '2022-12-03 22:52:14', 7727, NULL, 1, 1),
+(4, 'User', 'User', 'User@gmail.com', '$2y$10$R9cfrajcHPJmL3wle/IBgea6XUT6uvIvlcyuCruQtKHfOZHfY.Gei', '2022-12-03 22:53:09', 4255, NULL, 0, 1);
 
 --
 -- Index pour les tables déchargées

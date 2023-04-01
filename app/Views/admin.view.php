@@ -106,7 +106,7 @@
                                     <?= htmlspecialchars($post["created_at"])?>
                                 </td>
                                 <td class="align-middle">
-                                    <?= htmlspecialchars($post["update_at"]) ?>
+                                    <?= htmlspecialchars($post["update_at"] ?? '') ?>
                                 </td>
                                 <td class="align-middle">
                                     <?= htmlspecialchars($post["name"]) ?>
