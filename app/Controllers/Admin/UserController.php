@@ -3,7 +3,6 @@
 namespace App\Controllers\Admin;
 
 use App\Core\GET;
-use App\Core\POST;
 use App\Core\Securite;
 use App\Core\Toolbox;
 use App\Controllers\MainController;
