@@ -11,7 +11,7 @@
              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                  <li class="nav-item"><a class="nav-link active" aria-current="page" href="home">Home</a></li>
                 <?php 
-                 $session = new App\Core\Session();
+                 $session = new App\Core\SESSION();
                  if ($session->getAttribute("profile") ? $session->getAttribute("profile")["is_admin"] : false) : ?>
                     <li class="nav-item"><a class="nav-link" href="admin">Admin</a></li>
                 <?php endif ; ?>
@@ -19,7 +19,7 @@
                  <li class="nav-item"><a class="nav-link" href="pageCv">About me</a></li>
                  <li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
                 <?php 
-                 $session = new App\Core\Session();
+                 $session = new App\Core\SESSION();
                  if ($session->existsAttribute("profile")) : ?>
                     <li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
                 <?php else : ?>

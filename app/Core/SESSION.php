@@ -6,7 +6,7 @@ namespace App\Core;
  * Class modeling the session.
  * Encapsulates the $_SESSION PHP superglobal.
  */
-class Session
+class SESSION
 {
     /**
      * Constructor.

@@ -2,8 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Core\Get;
-use App\Core\POST;
+use App\Core\GET;
 use App\Models\UsersManager;
 use App\Models\CategoriesManager;
 use App\Core\Session;
@@ -35,7 +34,7 @@ class HomeController extends MainController
             "page_title" => "Accueil",
             "view" => "../Views/home.view.php",
             "categories" => $categoryManager->getAllCategories(),
-            "template" => "../Views/common/template.view.php"
+            "template" => "../Views/Common/template.view.php"
         ];
 
         if(isset($this->superglobalGetEmail) and isset($this->superglobalGetValidationKey)){

@@ -5,7 +5,7 @@ namespace App\Core;
 /**
  * Encapsulates the $_GET PHP superglobal.
  */
-class Get
+class GET
 {
      /**
      * Returns the $_GET array

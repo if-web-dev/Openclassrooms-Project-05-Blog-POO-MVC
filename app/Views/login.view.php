@@ -3,7 +3,8 @@
     <div class="d-flex flex-column justify-content-center align-items-center h-100">
        <!--Alert Message -->
         <?php
-        $session = new App\Core\Session();
+        use App\Core\SESSION;
+        $session = new SESSION();
         if ($session->existsAttribute("alert")) : ?>
                 <div class="alert <?= htmlspecialchars($session->getAttribute("alert")["type"]); ?> mt-5" role="alert">
                     <?= htmlspecialchars($session->getAttribute("alert")["message"]); ?>

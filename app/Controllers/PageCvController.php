@@ -16,7 +16,7 @@ class PageCvController extends MainController
             "page_title" => "Cv Page",
             "page_css" => "pageCv.css",
             "view" => "../Views/PageCv.view.php",
-            "template" => "../Views/common/template.view.php"
+            "template" => "../Views/Common/template.view.php"
         ];
 
 
