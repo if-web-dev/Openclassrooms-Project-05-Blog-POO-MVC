@@ -101,7 +101,7 @@ class PostsManager extends Model
     public function getPaginationPostsList(int $start,int $nbrOfElementbyPage)
     {
         $sql = "SELECT P.*, C.name 
-        FROM Posts P, Categories C
+        FROM posts P, categories C
         WHERE P.id_category = C.id
         ORDER BY created_at DESC
         LIMIT $start, $nbrOfElementbyPage";

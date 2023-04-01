@@ -1,4 +1,29 @@
-RewriteEngine on
-
-Rewritecond %{REQUEST_FILENAME} !-f
+# Remove index.php from the request but maintain the query string
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php [QSA,L]
+
+#RewriteRule ^(.*)$ /index.php?$1
+</IfModule>
+
+#---working--
+#<IfModule mod_rewrite.c>
+#    RewriteEngine On
+#    Options +FollowSymLinks -Indexes
+
+#    RewriteCond %{REQUEST_FILENAME} !-d
+#    RewriteCond %{REQUEST_FILENAME} !-f
+#    RewriteRule ^(.*)$ index.php [QSA,L]
+#</IfModule>
+
+#-also has no error---
+#<IfModule mod_rewrite.c>
+#    RewriteEngine On
+#    RewriteBase /
+#    RewriteCond %{REQUEST_FILENAME} !-f
+#    RewriteCond %{REQUEST_FILENAME} !-d
+#    RewriteRule . /index.php [L]
+#</IfModule>

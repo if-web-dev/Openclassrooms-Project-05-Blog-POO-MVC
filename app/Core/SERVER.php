@@ -4,7 +4,7 @@ namespace App\Core;
 /**
  * Encapsulates the $_SERVER PHP superglobal.
  */
-class Server
+class SERVER
 {
      /**
      * Returns $_SERVER array

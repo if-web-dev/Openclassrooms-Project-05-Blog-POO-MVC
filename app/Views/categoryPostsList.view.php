@@ -1,7 +1,8 @@
 <div class="container main-content">
     <!--Alert Message -->
     <?php
-    $session = new App\Core\Session();
+    use App\Core\SESSION;
+    $session = new SESSION();
     if ($session->existsAttribute("alert")) : ?>
         <div class="alert <?= htmlspecialchars($session->getAttribute("alert")["type"]); ?> mt-5" role="alert">
             <?= htmlspecialchars($session->getAttribute("alert")["message"]); ?>
