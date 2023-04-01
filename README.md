@@ -7,12 +7,13 @@ A posts list with their categories, the ability to post a comment if your user a
 
 ## To start
 
-This project was developed with PHP 7.4, it integrates the bootstrap, jquery, datatables and fontawesome libraries.
+This project was developed with PHP 8.1, it integrates the bootstrap, jquery, datatables and fontawesome libraries.
 
 ### Requirements
 
-- A machine with at least PHP 7.4.
+- A machine with at least PHP 8.1.
 - A software such as wamp, mamp or other to open a local server to use PHP.
+- Composer
 
 ### Installation
 
