@@ -19,11 +19,20 @@ This project was developed with PHP 7.4, it integrates the bootstrap, jquery, da
 - Download the database and install it in php my admin for example.
 - Download the project.
 - Put your own email address in the Config/Constant.php file in order to make the mail sending service work, and configure a local mail server.
+- Install the Composer autoloader with the terminal : `composer install`
 
 ## Startup
 
 - Locally run, wamp or mamp or another local server for php.
 - Create a virtualyhost in the wamp configuration menu pointing to the public folder in order to execute index.php.
+
+## Credentials
+
+- User email : `User@gmail.com`
+- User Password: `password`
+
+- Admin email: `Admin@gmail.com`
+- Admin password: `password`
 
 ## Made with
 
@@ -36,5 +45,3 @@ This project was developed with PHP 7.4, it integrates the bootstrap, jquery, da
 ## Author
 
 * **Ishake FOUHAL** _alias_ [@IF-WEB-DEV](https://github.com/if-web-dev)
-
-
