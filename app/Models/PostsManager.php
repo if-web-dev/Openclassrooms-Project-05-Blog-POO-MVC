@@ -33,7 +33,7 @@ class PostsManager extends Model
     public function getPost(int $id)
     {
         $sql = 'SELECT P.*, C.name 
-        FROM Posts P, Categories C
+        FROM posts P, categories C
         WHERE P.id ='.$id;
         $stmt= $this->getPdo()->prepare($sql);
         $stmt->execute();
@@ -60,7 +60,7 @@ class PostsManager extends Model
     public function getPostsList(): array
     {
         $sql = 'SELECT P.*, C.name 
-        FROM Posts P, Categories C
+        FROM posts P, categories C
         WHERE P.id_category = C.id
         ORDER BY created_at DESC';
         $stmt = $this->getPdo()->query($sql);
@@ -74,7 +74,7 @@ class PostsManager extends Model
      */
     public function deletePost(int $id)
     {
-        $sql = 'DELETE FROM Posts WHERE id = ?';
+        $sql = 'DELETE FROM posts WHERE id = ?';
         $stmt = $this->getPdo()->prepare($sql);
         $stmt->execute([$id]);
         $stmt->closeCursor();;

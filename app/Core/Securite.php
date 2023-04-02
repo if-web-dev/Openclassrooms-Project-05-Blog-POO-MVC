@@ -2,6 +2,8 @@
 
 namespace App\Core;
 
+use App\Core\SESSION;
+
 /**
  * filters data inputs
  */
@@ -144,7 +146,7 @@ class Securite
      */
     public static function isAdminConnected()
     {
-        $session = Session::getAttribute("profile");
+        $session = SESSION::getAttribute("profile");
         return $session ? $session["is_admin"] : false;
     }
 }

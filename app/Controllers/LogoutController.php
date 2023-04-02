@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Core\Session;
+use App\Core\SESSION;
 use App\Core\Toolbox;
 /**
  * Encapsulates the logout action, return
@@ -15,8 +15,8 @@ class LogoutController extends MainController
      */
     public function logout()
     {
-        Session::unset("profile");
-        Session::unset("admin");
+        SESSION::unset("profile");
+        SESSION::unset("admin");
         Toolbox::addAlertMessage("You are successfully logged out", Toolbox::GREEN_COLOR);
         header("Location: " . URL . "home");
     }

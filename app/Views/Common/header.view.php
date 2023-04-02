@@ -21,9 +21,9 @@
                 <?php 
                  $session = new App\Core\SESSION();
                  if ($session->existsAttribute("profile")) : ?>
-                    <li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
+                    <a href="logout" class="btn btn-outline-light ms-3 px-4">Logout</a>
                 <?php else : ?>
-                    <li class="nav-item"><a class="nav-link" href="login">Login</a></li>
+                    <a href="login" class="btn btn-outline-light ms-3 px-4">Login</a>
                 <?php endif; ?>
              </ul>
          </div>

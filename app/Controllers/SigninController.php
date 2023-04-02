@@ -1,13 +1,6 @@
 <?php
 
 namespace App\Controllers;
-
-use App\Core\POST;
-use App\Models\UsersManager;
-use App\Core\Securite;
-use App\Core\Toolbox;
-use App\Core\Session;
-use App\Services\Mail;
 /**
  * Encapsulates the data signin page et generates its page
  */

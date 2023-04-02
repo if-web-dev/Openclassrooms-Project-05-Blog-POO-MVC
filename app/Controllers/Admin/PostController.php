@@ -41,7 +41,7 @@ class PostController extends MainController
             "page_description" => "Description de la page d'édition d'un article",
             "page_title" => "Post Edit page",
             "view" => "../Views/postEditPage.view.php",
-            "template" => "../Views/common/template.view.php",
+            "template" => "../Views/Common/template.view.php",
         ];
 
         if (Securite::isAdminConnected()){
@@ -70,7 +70,7 @@ class PostController extends MainController
             "page_description" => "Description de la page d'ajout d'un article",
             "page_title" => "Add a post",
             "view" => "../Views/addPostPage.view.php",
-            "template" => "../Views/common/template.view.php",
+            "template" => "../Views/Common/template.view.php",
             "page_css" => "admin.css"
         ];  
 

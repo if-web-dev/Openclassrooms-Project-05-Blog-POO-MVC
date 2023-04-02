@@ -16,7 +16,7 @@ class GET
     }
     /**
      * Returns a value from the array $_GET with the attribute $key
-     * @param string $key Indice du tableau $_GET
+     * @param $key Indice du tableau $_GET
      */
     public static function key($key)
     {
