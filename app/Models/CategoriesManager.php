@@ -30,7 +30,7 @@ class CategoriesManager extends Model
     public function getPostsbyCategory(int $id, int $start,int $nbrOfElementbyPage)
     {
         $sql = "SELECT P.*, C.name 
-        FROM Posts P, Categories C
+        FROM posts P, categories C
         WHERE P.id_category = C.id
         AND C.id = $id
         ORDER BY P.created_at DESC

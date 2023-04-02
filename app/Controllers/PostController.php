@@ -4,8 +4,8 @@ namespace App\Controllers;
 
 use App\Models\PostsManager;
 use App\Models\CommentsManager;
-use App\Core\Session;
-use App\Core\Get;
+use App\Core\SESSION;
+use App\Core\GET;
 use App\Core\Toolbox;
 /**
  * Encaplsulates post controller and generates post page
@@ -17,8 +17,8 @@ class PostController extends MainController
 
     public function __construct()
     {
-        $this->superglobalGet = Get::all();
-        $this->superglobalGetId = Get::key("id");
+        $this->superglobalGet = GET::all();
+        $this->superglobalGetId = GET::key("id");
     }
     /**
      * generates post page
@@ -40,7 +40,7 @@ class PostController extends MainController
             "template" => "../Views/Common/template.view.php"
         ];
 
-        $session = new Session();
+        $session = new SESSION();
         if (!$session->existsAttribute("profile")) {
             Toolbox::addAlertMessage("Go to login to post a comment !", Toolbox::RED_COLOR);
         }

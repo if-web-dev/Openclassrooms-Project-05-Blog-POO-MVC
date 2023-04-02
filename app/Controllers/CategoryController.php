@@ -42,7 +42,7 @@ class CategoryController extends MainController
         $data_page = [
             "page_description" => "PostsListPage",
             "page_title" => "PostsListPage",
-            "view" => "../Views/categoryPostslist.view.php",
+            "view" => "../Views/categoryPostsList.view.php",
             "page_css" => "postsList.css",
             "posts_list" => $postsList,
             "nbr_of_pages" => $nbrOfPages,

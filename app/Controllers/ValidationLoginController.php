@@ -6,7 +6,7 @@ use App\Core\POST;
 use App\Models\UsersManager;
 use App\Core\Securite;
 use App\Core\Toolbox;
-use App\Core\Session;
+use App\Core\SESSION;
 use App\Services\Mail;
 /**
  * Encapsulates the login processing
@@ -39,7 +39,7 @@ class ValidationLoginController extends MainController
 
                             if ($UserManager->hasAnActivedAccount($data_input_filtered["email"])) {
 
-                                new Session();
+                                new SESSION();
                                 Session::setAttribute("profile", ["id" => $userDB["id"], "is_admin" => $userDB["is_admin"]]);
                             
                                 if (Securite::isAdminConnected()) {

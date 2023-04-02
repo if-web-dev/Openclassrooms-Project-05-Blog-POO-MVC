@@ -23,7 +23,7 @@
                     <div class="col-lg-4">
                         <h4 class="text-uppercase mb-4">About IF-WEB-DEV</h4>
                         <p class="lead mb-0">
-                            Full Stack Developper since 2020. A Studi and Openclassrooms Student.
+                            Full Stack Developper since 2020. A <a href="https://www.studi.com/fr/formation/developpement/bachelor-developpeur-dapplication-java-0" class="link-secondary text-decoration-none fw-bold">Studi</a> and <a href="https://openclassrooms.com/fr/paths/500-developpeur-dapplication-php-symfony" class="link-secondary text-decoration-none fw-bold">Openclassrooms</a> Student.
                         </p>
                     </div>
                 </div>
@@ -31,5 +31,5 @@
         </footer>
         <!-- Copyright Section-->
         <div class="copyright py-2 m-0 text-center text-white bg-secondary">
-            <div class="container">Copyright © Blog OP Project 5 | Designed by If-web-dev</div>
+            <div class="container">Copyright <i class="fa fa-copyright"></i> Blog OP Project 5 | Designed by <a href="https://github.com/if-web-dev" class="link-light text-decoration-none fw-bold ">If-web-dev</a></div>
         </div>

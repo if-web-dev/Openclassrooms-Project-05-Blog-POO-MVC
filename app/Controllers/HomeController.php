@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Core\GET;
 use App\Models\UsersManager;
 use App\Models\CategoriesManager;
-use App\Core\Session;
+use App\Core\SESSION;
 use App\Core\Toolbox;
 /**
  * Encapsulates the data home page et generate his page
@@ -17,8 +17,8 @@ class HomeController extends MainController
 
     public function __construct()
     {
-        $this->superglobalGetValidationKey = Get::key("validation_key");
-        $this->superglobalGetEmail = Get::key("email");
+        $this->superglobalGetValidationKey = GET::key("validation_key");
+        $this->superglobalGetEmail = GET::key("email");
     }
     /**
      * Returns home page
@@ -44,9 +44,9 @@ class HomeController extends MainController
             if($dataDB["validation_key"]==$this->superglobalGetValidationKey){
                 
                 $user->activateUserAccount($this->superglobalGetEmail);
-                new Session();
-                Session::setAttribute("profile", ["email" => $dataDB["email"]]);
-                Session::setAttribute("profile", ["is_admin" => $dataDB["is_admin"]]);
+                new SESSION();
+                SESSION::setAttribute("profile", ["email" => $dataDB["email"]]);
+                SESSION::setAttribute("profile", ["is_admin" => $dataDB["is_admin"]]);
                 Toolbox::addAlertMessage("Welcome to our site, your account is actived", Toolbox::GREEN_COLOR);
             }
         }

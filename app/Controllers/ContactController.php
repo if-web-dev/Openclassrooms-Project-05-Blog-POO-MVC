@@ -16,8 +16,8 @@ class ContactController extends MainController
 
     public function __construct()
     {
-        $this->superglobalPost = Post::all();
-        $this->superglobalPostSubmit = Post::key("submit");
+        $this->superglobalPost = POST::all();
+        $this->superglobalPostSubmit = POST::key("submit");
     }
     /**
     * Returns contact page

@@ -20,12 +20,15 @@
         <div class="card-body">
             <div class="row justify-content-center mb-5">
                 <div>
+                    <?php
+                   // var_dump($dataPostDB);
+                    ?>
                     <form method="post" action="postProcessing?id=<?= htmlspecialchars($dataPostDB["id"]) ?>">
                         <!-- Category input-->
                         <div class="my-4">
                             <select class="form-control form-control-lg" name="category" id="category">
                                 <?php foreach ($dataCategoryDB as $data) : ?>
-                                    <option <?= ($dataPostDB["id_category"] == $data["id"]) ? "selected" : "" ?> value="<?= htmlspecialchars($data["id"]) ?>">
+                                    <option <?= ($dataPostDB["id_category"] == $data["id"]) ? "selected" : "" ?> value="<?= htmlspecialchars($dataPostDB["id"]) ?>">
                                         <?= htmlspecialchars($data["name"]) ?>
                                     </option>
                                 <?php endforeach ?>
